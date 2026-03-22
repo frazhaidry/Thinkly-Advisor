@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 
-const HeroScreen = () => {
+const HeroScreen = ({ onStart }) => {
   const agents = [
     { name: "AI SDR", icon: "🎯", description: "Sales Development" },
     { name: "AI Support Agent", icon: "💬", description: "Customer Support" },
@@ -35,7 +35,6 @@ const HeroScreen = () => {
   }, []);
 
   const styles = {
-    // Main Container
     container: {
       minHeight: "100vh",
       display: "flex",
@@ -44,8 +43,6 @@ const HeroScreen = () => {
       position: "relative",
       background: "linear-gradient(135deg, #0A0A0A 0%, #0F0F0F 50%, #0A0A0A 100%)",
     },
-
-    // Background Elements
     backgroundOrb1: {
       position: "fixed",
       top: "-20%",
@@ -58,7 +55,6 @@ const HeroScreen = () => {
       animation: "pulseSlow 6s ease-in-out infinite",
       pointerEvents: "none",
     },
-
     backgroundOrb2: {
       position: "fixed",
       bottom: "-20%",
@@ -71,7 +67,6 @@ const HeroScreen = () => {
       animation: "pulseSlower 8s ease-in-out infinite",
       pointerEvents: "none",
     },
-
     gridPattern: {
       position: "fixed",
       inset: 0,
@@ -79,8 +74,6 @@ const HeroScreen = () => {
       opacity: 0.3,
       pointerEvents: "none",
     },
-
-    // Navigation
     nav: {
       position: "sticky",
       top: 0,
@@ -94,7 +87,6 @@ const HeroScreen = () => {
       backdropFilter: "blur(20px)",
       borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
     },
-
     logoContainer: {
       display: "flex",
       alignItems: "center",
@@ -102,7 +94,6 @@ const HeroScreen = () => {
       cursor: "pointer",
       transition: "transform 0.3s ease",
     },
-
     logoBox: {
       width: "32px",
       height: "32px",
@@ -114,14 +105,12 @@ const HeroScreen = () => {
       boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
       transition: "transform 0.3s ease",
     },
-
     logoInner: {
       width: "16px",
       height: "16px",
       background: "linear-gradient(135deg, #0A0A0A, #1A1A1A)",
       borderRadius: "4px",
     },
-
     logoText: {
       fontSize: "18px",
       fontWeight: 600,
@@ -130,7 +119,6 @@ const HeroScreen = () => {
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",
     },
-
     statusBadge: {
       display: "flex",
       alignItems: "center",
@@ -142,21 +130,17 @@ const HeroScreen = () => {
       border: "1px solid rgba(255, 255, 255, 0.1)",
       transition: "all 0.3s ease",
     },
-
     statusDot: {
       width: "10px",
       height: "10px",
       borderRadius: "50%",
       position: "relative",
     },
-
     statusText: {
       fontSize: "12px",
       color: "rgba(255, 255, 255, 0.7)",
       fontWeight: 500,
     },
-
-    // Main Content
     main: {
       position: "relative",
       zIndex: 10,
@@ -169,7 +153,6 @@ const HeroScreen = () => {
       padding: "64px 24px",
       minHeight: "calc(100vh - 200px)",
     },
-
     badge: {
       padding: "8px 16px",
       borderRadius: "9999px",
@@ -179,7 +162,6 @@ const HeroScreen = () => {
       marginBottom: "32px",
       animation: "fadeInUp 0.6s ease-out",
     },
-
     badgeText: {
       fontSize: "12px",
       color: "rgba(255, 255, 255, 0.6)",
@@ -187,7 +169,6 @@ const HeroScreen = () => {
       letterSpacing: "0.2em",
       fontWeight: 500,
     },
-
     heading: {
       fontSize: "clamp(48px, 8vw, 96px)",
       fontWeight: "bold",
@@ -198,7 +179,6 @@ const HeroScreen = () => {
       opacity: 0,
       animationFillMode: "forwards",
     },
-
     gradientText: {
       background: "linear-gradient(135deg, #c084fc, #60a5fa, #22d3ee)",
       WebkitBackgroundClip: "text",
@@ -207,7 +187,6 @@ const HeroScreen = () => {
       position: "relative",
       display: "inline-block",
     },
-
     description: {
       color: "rgba(255, 255, 255, 0.5)",
       fontSize: "clamp(18px, 2vw, 24px)",
@@ -218,15 +197,12 @@ const HeroScreen = () => {
       opacity: 0,
       animationFillMode: "forwards",
     },
-
-    // New Talk to Thinkly Button
     thinklyButtonContainer: {
       marginBottom: "32px",
       animation: "fadeInUp 0.6s ease-out 0.5s forwards",
       opacity: 0,
       animationFillMode: "forwards",
     },
-
     thinklyButton: {
       position: "relative",
       padding: "18px 48px",
@@ -240,7 +216,6 @@ const HeroScreen = () => {
       background: "linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(59, 130, 246, 0.9))",
       boxShadow: "0 8px 32px rgba(139, 92, 246, 0.3)",
     },
-
     thinklyGlow: {
       position: "absolute",
       inset: 0,
@@ -250,7 +225,6 @@ const HeroScreen = () => {
       opacity: 0,
       transition: "opacity 0.4s ease",
     },
-
     thinklyContent: {
       position: "relative",
       display: "flex",
@@ -259,30 +233,16 @@ const HeroScreen = () => {
       gap: "12px",
       zIndex: 2,
     },
-
     thinklyIcon: {
       width: "24px",
       height: "24px",
       transition: "transform 0.3s ease",
     },
-
     thinklyText: {
       color: "white",
       fontWeight: 600,
       letterSpacing: "0.5px",
     },
-
-    thinklySparkles: {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: "100%",
-      height: "100%",
-      pointerEvents: "none",
-    },
-
-    // Secondary CTA
     ctaButton: {
       position: "relative",
       padding: "14px 32px",
@@ -298,14 +258,12 @@ const HeroScreen = () => {
       opacity: 0,
       animationFillMode: "forwards",
     },
-
     ctaText: {
       position: "relative",
       color: "rgba(255, 255, 255, 0.8)",
       fontWeight: 500,
       zIndex: 1,
     },
-
     message: {
       marginTop: "24px",
       fontSize: "14px",
@@ -313,7 +271,6 @@ const HeroScreen = () => {
       fontFamily: "monospace",
       animation: "fadeIn 0.4s ease-out",
     },
-
     agentsContainer: {
       display: "flex",
       flexWrap: "wrap",
@@ -325,11 +282,9 @@ const HeroScreen = () => {
       opacity: 0,
       animationFillMode: "forwards",
     },
-
     agentItem: {
       position: "relative",
     },
-
     agentButton: {
       padding: "10px 16px",
       borderRadius: "9999px",
@@ -342,19 +297,16 @@ const HeroScreen = () => {
       alignItems: "center",
       gap: "8px",
     },
-
     agentIcon: {
       fontSize: "18px",
       transition: "transform 0.3s ease",
     },
-
     agentName: {
       fontSize: "14px",
       color: "rgba(255, 255, 255, 0.7)",
       fontWeight: 500,
       transition: "color 0.3s ease",
     },
-
     tooltip: {
       position: "absolute",
       bottom: "100%",
@@ -370,17 +322,14 @@ const HeroScreen = () => {
       zIndex: 20,
       animation: "fadeInUp 0.2s ease-out",
     },
-
     tooltipText: {
       fontSize: "12px",
       color: "rgba(255, 255, 255, 0.8)",
     },
-
     tooltipArrow: {
       position: "absolute",
       top: "100%",
       left: "50%",
-      transform: "translateX(-50%)",
       width: "8px",
       height: "8px",
       background: "rgba(0, 0, 0, 0.9)",
@@ -388,8 +337,6 @@ const HeroScreen = () => {
       borderRight: "1px solid rgba(255, 255, 255, 0.1)",
       borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
     },
-
-    // Footer
     footer: {
       position: "relative",
       zIndex: 10,
@@ -398,151 +345,55 @@ const HeroScreen = () => {
       borderTop: "1px solid rgba(255, 255, 255, 0.05)",
       animation: "fadeIn 0.6s ease-out",
     },
-
     footerText: {
       fontSize: "12px",
       color: "rgba(255, 255, 255, 0.2)",
     },
   };
 
-  // Handle Talk to Thinkly click
+  // ── Handle Talk to Thinkly click ─────────────────────────────────────────────
   const handleTalkToThinkly = () => {
-    // This will trigger your RAG-based chatbot
-    // You can open a modal, slide-in panel, or any other interface
-    console.log("Opening Thinkly AI Assistant...");
-    // Add your chatbot opening logic here
-    // For example: setShowChatbot(true) or dispatch an event
+    if (onStart) onStart();
   };
 
   return (
     <div style={styles.container}>
-      {/* Inject CSS Animations */}
       <style>
         {`
           @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0);    }
           }
-
           @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
+            from { opacity: 0; }
+            to   { opacity: 1; }
           }
-
           @keyframes slideDown {
-            from {
-              opacity: 0;
-              transform: translateY(-100%);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-100%); }
+            to   { opacity: 1; transform: translateY(0);     }
           }
-
           @keyframes pulseSlow {
-            0%, 100% {
-              opacity: 0.3;
-              transform: scale(1);
-            }
-            50% {
-              opacity: 0.6;
-              transform: scale(1.05);
-            }
+            0%, 100% { opacity: 0.3; transform: scale(1);    }
+            50%       { opacity: 0.6; transform: scale(1.05); }
           }
-
           @keyframes pulseSlower {
-            0%, 100% {
-              opacity: 0.2;
-              transform: scale(1);
-            }
-            50% {
-              opacity: 0.5;
-              transform: scale(1.1);
-            }
+            0%, 100% { opacity: 0.2; transform: scale(1);   }
+            50%       { opacity: 0.5; transform: scale(1.1); }
           }
-
           @keyframes pulse {
-            0%, 100% {
-              transform: scale(1);
-              opacity: 1;
-            }
-            50% {
-              transform: scale(1.2);
-              opacity: 0.7;
-            }
+            0%, 100% { transform: scale(1);   opacity: 1;   }
+            50%       { transform: scale(1.2); opacity: 0.7; }
           }
-
-          @keyframes float {
-            0%, 100% {
-              transform: translateY(0px) translateX(0px);
-            }
-            25% {
-              transform: translateY(-10px) translateX(5px);
-            }
-            75% {
-              transform: translateY(10px) translateX(-5px);
-            }
-          }
-
           @keyframes gradientShift {
-            0% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-            100% {
-              background-position: 0% 50%;
-            }
+            0%   { background-position: 0% 50%;   }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%;   }
           }
-
           @keyframes shimmer {
-            0% {
-              transform: translateX(-100%) rotate(45deg);
-            }
-            100% {
-              transform: translateX(200%) rotate(45deg);
-            }
+            0%   { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(200%)  rotate(45deg); }
           }
-
-          @keyframes ripple {
-            0% {
-              transform: scale(0);
-              opacity: 0.5;
-            }
-            100% {
-              transform: scale(4);
-              opacity: 0;
-            }
-          }
-
-          .hover-scale:hover {
-            transform: scale(1.05);
-          }
-
-          .hover-rotate:hover {
-            transform: rotate(180deg);
-          }
-
-          .hover-brightness:hover {
-            filter: brightness(1.1);
-          }
-
-          button:active {
-            transform: scale(0.98);
-          }
-
+          button:active { transform: scale(0.98); }
           @media (prefers-reduced-motion: reduce) {
             * {
               animation-duration: 0.01ms !important;
@@ -553,12 +404,12 @@ const HeroScreen = () => {
         `}
       </style>
 
-      {/* Background Elements */}
+      {/* Background */}
       <div style={styles.backgroundOrb1} />
       <div style={styles.backgroundOrb2} />
       <div style={styles.gridPattern} />
 
-      {/* Navigation */}
+      {/* Nav */}
       <nav style={styles.nav}>
         <div
           style={styles.logoContainer}
@@ -622,7 +473,7 @@ const HeroScreen = () => {
         </div>
       </nav>
 
-      {/* Main Content */}
+      {/* Main */}
       <main style={styles.main}>
         <div style={styles.badge}>
           <span style={styles.badgeText}>Powered by RAG · Built for ThinklyLabs</span>
@@ -659,7 +510,7 @@ const HeroScreen = () => {
           from ThinklyLabs' agent portfolio.
         </p>
 
-        {/* Main Talk to Thinkly Button */}
+        {/* Talk to Thinkly Button */}
         <div style={styles.thinklyButtonContainer}>
           <button
             style={styles.thinklyButton}
@@ -667,12 +518,7 @@ const HeroScreen = () => {
             onMouseLeave={() => setIsThinklyHovered(false)}
             onClick={handleTalkToThinkly}
           >
-            <div
-              style={{
-                ...styles.thinklyGlow,
-                opacity: isThinklyHovered ? 0.8 : 0,
-              }}
-            />
+            <div style={{ ...styles.thinklyGlow, opacity: isThinklyHovered ? 0.8 : 0 }} />
             <div style={styles.thinklyContent}>
               <svg
                 style={{
@@ -710,14 +556,7 @@ const HeroScreen = () => {
               </svg>
             </div>
             {isThinklyHovered && (
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  borderRadius: "60px",
-                  overflow: "hidden",
-                }}
-              >
+              <div style={{ position: "absolute", inset: 0, borderRadius: "60px", overflow: "hidden" }}>
                 <div
                   style={{
                     position: "absolute",
@@ -775,23 +614,15 @@ const HeroScreen = () => {
               >
                 <span
                   style={styles.agentIcon}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "scale(1.1)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "scale(1)";
-                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.1)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
                 >
                   {agent.icon}
                 </span>
                 <span
                   style={styles.agentName}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(255, 255, 255, 0.7)";
-                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255, 255, 255, 0.7)"; }}
                 >
                   {agent.name}
                 </span>
