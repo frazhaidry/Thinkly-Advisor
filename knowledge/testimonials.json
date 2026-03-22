@@ -1,0 +1,20 @@
+[
+  {
+    "id": "testimonial_harnish",
+    "title": "Client Testimonial — Harnish Shah, 3minds digital",
+    "content": "Harnish Shah, Founder of 3minds digital, used ThinklyLabs' AI SDR and reported consistently getting 10-15% reply rates — better than their team was hitting manually. 3minds digital is a digital agency and one of ThinklyLabs' marquee clients for the AI SDR product. This result demonstrates that the AI SDR's research-first, hyper-personalized approach outperforms generic outbound automation.",
+    "metadata": { "type": "testimonial", "client": "3minds digital", "agent": "AI SDR" }
+  },
+  {
+    "id": "testimonial_ritin",
+    "title": "Client Testimonial — Ritin Agarwal, Fundvice",
+    "content": "Ritin Agarwal, Managing Partner at Fundvice, shared that the ThinklyLabs team really understands the nuances of building AI products and agents. Fundvice has already built 2 products with ThinklyLabs and is building more. Fundvice is an investment firm and their ongoing relationship with ThinklyLabs demonstrates the company's ability to deliver consistently across multiple engagements.",
+    "metadata": { "type": "testimonial", "client": "Fundvice", "agent": "Multiple" }
+  },
+  {
+    "id": "clients_list",
+    "title": "ThinklyLabs Client Portfolio",
+    "content": "ThinklyLabs has worked with a range of companies including: 3minds digital (digital agency, AI SDR), Fundvice (investment firm, multiple products), WiredCo, ScrollStop, Preferred Square, Yactraq, DePINtelligence by Quantum Alchemy, and 4am. These clients span digital agencies, fintech, media, and enterprise technology sectors, showing ThinklyLabs' ability to deploy agents across diverse industries.",
+    "metadata": { "type": "company_info", "category": "clients" }
+  }
+]

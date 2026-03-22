@@ -1,0 +1,32 @@
+[
+  {
+    "id": "solution_custom_agents_overview",
+    "title": "Custom Agents — Overview",
+    "content": "ThinklyLabs builds custom AI agents tailored to your specific workflows — combining intelligence for complex decisions with reliability for repetitive work. Most teams get stuck between off-the-shelf tools that don't fit and custom builds that never ship. ThinklyLabs bridges that gap with proven agent blueprints and custom orchestration so you get reliable AI automation that fits your stack, deployed in weeks instead of quarters.",
+    "metadata": { "type": "solution", "category": "custom" }
+  },
+  {
+    "id": "solution_custom_agents_reasoning",
+    "title": "Custom Agents — Reasoning Agents",
+    "content": "Reasoning Agents use advanced models to analyze, plan, and make decisions in real time. They handle complex tasks requiring judgment, context, and multi-step thinking. Types include: (1) Deep Research Agents — investigate topics across multiple sources, synthesize findings, resolve contradictions, deliver comprehensive reports with citations. (2) Knowledge Search Agents — query internal knowledge bases and external sources, rank results by relevance, deliver accurate answers with supporting documentation. (3) Conversational Agents — maintain context across dialogues, clarify intent, orchestrate workflows while staying on-brand and compliant. (4) Data Analysis Agents — explore datasets, generate queries, run statistical analysis, explain insights with visualizations. (5) Content Generation Agents — create platform-specific content adapting tone to audience. (6) Evaluation Agents — score outputs against policies or quality rubrics, flag issues, recommend improvements.",
+    "metadata": { "type": "solution_detail", "category": "custom" }
+  },
+  {
+    "id": "solution_custom_agents_operational",
+    "title": "Custom Agents — Operational Agents",
+    "content": "Operational Agents execute predefined workflows reliably and efficiently. They run on schedules or triggers, handling repetitive tasks with consistency and audit trails. Examples include: automated daily report generation, CRM data sync on a schedule, email outreach sequences running autonomously, compliance audit checks triggered nightly. These agents prioritize reliability and auditability over dynamic reasoning — ideal for tasks where the workflow is known and consistent execution matters most.",
+    "metadata": { "type": "solution_detail", "category": "custom" }
+  },
+  {
+    "id": "solution_knowledge_systems",
+    "title": "Knowledge Systems — Overview",
+    "content": "ThinklyLabs builds Knowledge Systems that transform scattered documents into searchable knowledge bases and intelligent knowledge graphs that surface critical relationships. This is useful for organizations with large volumes of internal documentation, SOPs, product wikis, or research that employees need to query. Knowledge Systems power the AI agents — giving them accurate, grounded information to answer questions without hallucinating.",
+    "metadata": { "type": "solution", "category": "knowledge" }
+  },
+  {
+    "id": "solution_ai_products",
+    "title": "AI Products — Overview",
+    "content": "ThinklyLabs has built ready-to-use AI products: (1) Authr-AI — an AI LinkedIn Content System that helps professionals create consistent LinkedIn content at scale. Paid product. (2) Mailen — an AI investor outreach system designed to help founders reach investors with personalized outreach. Paid product. These products are live and available outside of custom engagements for teams that need a faster path to value.",
+    "metadata": { "type": "solution", "category": "products" }
+  }
+]

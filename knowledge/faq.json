@@ -1,0 +1,50 @@
+[
+  {
+    "id": "faq_getting_started",
+    "title": "How to get started with ThinklyLabs",
+    "content": "Getting started with ThinklyLabs begins by booking a demo call. The team audits your workflows to identify bottlenecks where manual effort is slowing you down. Then they architect secure logic paths and integrations built to handle your data predictably. After that, they build and deploy AI orchestration that fits your existing stack with no disruption to daily operations. Post-launch they monitor, refine, and optimize to ensure stability as you grow. Contact: sachi@thinklylabs.com or book via cal.com/sachi-gupta-12svmo/30min.",
+    "metadata": { "type": "faq", "category": "process" }
+  },
+  {
+    "id": "faq_deployment_timeline",
+    "title": "How long does deployment take",
+    "content": "ThinklyLabs deploys agents in weeks, not quarters. Pre-built out-of-the-box agents can go live in days. Custom agents with deep workflow integration typically take 2-4 weeks depending on complexity and how many integrations are required. The process starts with a workflow audit, then architecture, then build and deploy. ThinklyLabs' model is specifically designed to avoid the common trap of custom AI builds that never ship.",
+    "metadata": { "type": "faq", "category": "process" }
+  },
+  {
+    "id": "faq_industries",
+    "title": "What industries ThinklyLabs works with",
+    "content": "ThinklyLabs works across industries including SaaS, fintech, digital agencies, and enterprise operations teams. Any team with repetitive back-office work is a strong fit. Their clients include 3minds digital (digital agency), Fundvice (investment firm), WiredCo, ScrollStop, Preferred Square, Yactraq, DePINtelligence by Quantum Alchemy, and 4am. The common thread is organizations with operational bottlenecks where humans are doing repetitive work that AI can handle reliably.",
+    "metadata": { "type": "faq", "category": "company" }
+  },
+  {
+    "id": "faq_about_company",
+    "title": "About ThinklyLabs — Founders and Mission",
+    "content": "ThinklyLabs was founded by Vedant Kunte and Sachi Gupta. Vedant Kunte is Co-Founder and CTO — a product engineer and technical architect who has built and shipped 20+ AI systems for enterprise teams. Sachi Gupta is Co-Founder and CEO — a product leader with experience scaling AI products at Faclon Labs and an AWS Certified Solutions Architect. The company's mission is to turn enterprise AI from experimental to operational. They also have an AI twin of Sachi available at thinklylabs.com/sachi-ai-twin for anyone who wants to talk to an AI version of the CEO.",
+    "metadata": { "type": "faq", "category": "company" }
+  },
+  {
+    "id": "faq_vs_offtheshelf",
+    "title": "ThinklyLabs vs off-the-shelf AI tools",
+    "content": "Most off-the-shelf AI tools either don't fit specific workflows or require massive internal resources to customize. ThinklyLabs sits between off-the-shelf tools that don't fit and fully custom builds that take quarters to ship. Their approach uses proven agent blueprints (the out-of-the-box agents) combined with custom orchestration for your specific stack and processes. The result is reliable AI automation deployed in weeks, not quarters, with post-launch monitoring and optimization.",
+    "metadata": { "type": "faq", "category": "comparison" }
+  },
+  {
+    "id": "faq_what_is_an_agent",
+    "title": "What is an AI agent",
+    "content": "An AI agent is a system that can take actions, make decisions, and complete tasks autonomously — not just answer questions. Unlike a simple chatbot that responds and stops, an agent can research, write, schedule, route, escalate, and execute multi-step workflows. ThinklyLabs builds two types: Reasoning Agents that handle complex judgment-based tasks (research, analysis, conversation) and Operational Agents that execute predefined workflows reliably on a schedule or trigger.",
+    "metadata": { "type": "faq", "category": "education" }
+  },
+  {
+    "id": "faq_integrations",
+    "title": "What tools and integrations ThinklyLabs supports",
+    "content": "ThinklyLabs integrates agents with most enterprise stacks. Common integrations include: CRMs like Salesforce and HubSpot, communication tools like Slack, Google Workspace, and Microsoft 365, project management tools like Notion, Linear, and Jira, data tools like PostgreSQL, BigQuery, Google Sheets, and Stripe, recruitment tools like LinkedIn, Indeed, Greenhouse, and Lever, and helpdesk tools like Intercom and Zendesk. Custom integrations are built during the setup phase for tools not on this list.",
+    "metadata": { "type": "faq", "category": "technical" }
+  },
+  {
+    "id": "faq_pricing",
+    "title": "How ThinklyLabs pricing works",
+    "content": "ThinklyLabs pricing is not publicly listed on the website and is discussed during the demo/consultation call. Pricing depends on the specific agent, level of customization, integrations required, and scale of deployment. The best way to get pricing information is to book a 30-minute demo at cal.com/sachi-gupta-12svmo/30min or email sachi@thinklylabs.com directly.",
+    "metadata": { "type": "faq", "category": "pricing" }
+  }
+]

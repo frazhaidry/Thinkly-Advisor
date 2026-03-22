@@ -1,0 +1,146 @@
+[
+  {
+    "id": "agent_sdr_overview",
+    "title": "AI SDR — Overview",
+    "content": "ThinklyLabs' AI SDR handles the entire sales motion from lead qualification to meeting booking with context-aware outreach that actually gets replies. It is not generic outbound automation — it conducts deep account research, generates hyper-personalized messages, handles replies, and books qualified meetings. Clients like Harnish Shah (Founder, 3minds digital) report consistently getting 10-15% reply rates, better than their teams were hitting manually.",
+    "metadata": { "type": "agent", "category": "sales", "agent_id": "ai_sdr" }
+  },
+  {
+    "id": "agent_sdr_how_it_works",
+    "title": "AI SDR — How It Works",
+    "content": "The AI SDR operates in four stages: (1) Research-first outreach — analyzes signals, social activity, and firmographics to build a prioritized lead list. Detects buying signals, scans social activity and funding events, pulls firmographics, tech stack, and recent news. (2) Hyper-personalized messaging — recent funding, job changes, content engagement woven into outreach that cuts through inbox noise. Every email has a hand-written feel from real account intelligence. (3) Conversation handling — handles replies and nurtures conversations across email and LinkedIn, knows when to book vs when to nurture. (4) Smart meeting booking — integrates with calendar and CRM to schedule only when leads are genuinely ready.",
+    "metadata": { "type": "agent_detail", "category": "sales", "agent_id": "ai_sdr" }
+  },
+  {
+    "id": "agent_sdr_sub_agents",
+    "title": "AI SDR — Sub-Agents",
+    "content": "Five specialized sub-agents power the AI SDR: (1) Shortlisting Agent — filters and scores leads based on buying signals, firmographics, and custom criteria. (2) Research Agent — pulls account intelligence from knowledge bases, social media, news, and company websites. (3) Email Composer Agent — generates personalized outreach for email and LinkedIn using account-specific intelligence. (4) Follow-Up Agent — manages ongoing conversations, handles objections, maintains context across touchpoints, escalates to humans when needed. (5) Meeting Scheduler Agent — books qualified meetings into your calendar with context and handoff notes for the sales team.",
+    "metadata": { "type": "agent_detail", "category": "sales", "agent_id": "ai_sdr" }
+  },
+  {
+    "id": "agent_sdr_best_for",
+    "title": "AI SDR — Best For",
+    "content": "The AI SDR is best for sales teams spending 3+ hours daily on cold emails, follow-ups, or lead qualification. It is ideal for companies doing outbound prospecting on LinkedIn and email, teams that need more qualified meetings without scaling headcount, and businesses that want personalization at scale. It supports multi-channel outreach across email and LinkedIn. It integrates with CRMs like HubSpot and Salesforce. Deployment typically takes days for the pre-built version.",
+    "metadata": { "type": "use_case", "category": "sales", "agent_id": "ai_sdr" }
+  },
+  {
+    "id": "agent_support_overview",
+    "title": "AI Support Agent — Overview",
+    "content": "ThinklyLabs' AI Support Agent handles customer queries with context-aware responses, learns from every interaction, and escalates only when truly needed. Unlike traditional chatbots with canned responses, it understands context, generates relevant answers from your documentation, knows when to escalate, and works across email and chat. It handles multi-turn troubleshooting conversations and provides humans with full context on handoff.",
+    "metadata": { "type": "agent", "category": "support", "agent_id": "ai_support" }
+  },
+  {
+    "id": "agent_support_how_it_works",
+    "title": "AI Support Agent — How It Works",
+    "content": "The AI Support Agent works in four stages: (1) Intelligent query routing — analyzes intent, determines if it can be resolved automatically, or routes to a human with full context. (2) Knowledge-powered responses — accesses your knowledge base including FAQs, product docs, and troubleshooting guides to generate accurate answers with citations. (3) Human handoff — complex or sensitive queries escalate with full conversation history, suggested next steps, and relevant documentation. (4) Conversational interface — customers interact via email or chat, agent maintains context across messages for multi-turn troubleshooting.",
+    "metadata": { "type": "agent_detail", "category": "support", "agent_id": "ai_support" }
+  },
+  {
+    "id": "agent_support_sub_agents",
+    "title": "AI Support Agent — Sub-Agents",
+    "content": "Three sub-agents power the AI Support system: (1) Query Agent — analyzes incoming questions, determines resolution feasibility, checks knowledge base relevance, routes appropriately. For example, identifies a VIP customer's urgent bug report and fast-tracks to engineering with full context. (2) AI Response Agent — generates accurate answers using documentation, maintains conversation context, provides citations, escalates when confidence is low. (3) Escalation Agent — monitors conversation quality, identifies when human intervention is needed, hands off with complete context and suggested actions.",
+    "metadata": { "type": "agent_detail", "category": "support", "agent_id": "ai_support" }
+  },
+  {
+    "id": "agent_support_best_for",
+    "title": "AI Support Agent — Best For",
+    "content": "The AI Support Agent is best for support teams receiving repetitive queries at scale, companies wanting to reduce first-response time without scaling headcount, and businesses handling tier-1 queries that don't require human judgment. It integrates with Intercom, Zendesk, Slack-based internal support, and most messaging platforms. It supports email and live chat. It handles multiple languages. Deployment is typically fast once your knowledge base is ready.",
+    "metadata": { "type": "use_case", "category": "support", "agent_id": "ai_support" }
+  },
+  {
+    "id": "agent_hr_overview",
+    "title": "AI HR Agent — Overview",
+    "content": "ThinklyLabs' AI HR Agent handles recruiting and hiring end to end — sourcing candidates, conducting screening interviews, coordinating logistics, and managing onboarding. It gives HR teams time back for strategic people decisions. Unlike standard recruiting automation that only parses resumes or schedules, this agent actively sources candidates across multiple channels, conducts voice-enabled pre-screening interviews, and manages the entire candidate journey.",
+    "metadata": { "type": "agent", "category": "hr", "agent_id": "ai_hr" }
+  },
+  {
+    "id": "agent_hr_how_it_works",
+    "title": "AI HR Agent — How It Works",
+    "content": "The AI HR Agent works in four stages: (1) Candidate sourcing and pre-screening — monitors LinkedIn and resume databases, scores candidates against job requirements, qualifies leads before human review. (2) Automated interview scheduling — handles coordination using job descriptions and templates from your knowledge base. (3) AI-powered interviews — conducts voice-enabled pre-screening interviews, asks relevant questions, and assesses responses against your defined criteria. (4) Seamless onboarding — manages new hire paperwork, schedules, and initial training once humans make the final hiring decision.",
+    "metadata": { "type": "agent_detail", "category": "hr", "agent_id": "ai_hr" }
+  },
+  {
+    "id": "agent_hr_sub_agents",
+    "title": "AI HR Agent — Sub-Agents",
+    "content": "Four sub-agents power the AI HR system: (1) Pre-screening Agent — sources candidates from LinkedIn and resume databases, scores against requirements, conducts initial qualification. (2) Email Agent — handles candidate communication, scheduling, and updates using your templates. (3) Interview Agent — conducts voice-enabled screening interviews, asks consistent questions, evaluates responses, and flags top candidates. For example, conducts a 15-minute pre-screening call with 8 role-specific questions and generates a detailed candidate scorecard. (4) Onboarding Agent — manages paperwork, schedules, initial training, and ensures smooth new hire experience after final approval.",
+    "metadata": { "type": "agent_detail", "category": "hr", "agent_id": "ai_hr" }
+  },
+  {
+    "id": "agent_hr_best_for",
+    "title": "AI HR Agent — Best For",
+    "content": "The AI HR Agent is best for HR teams spending excessive time on sourcing, scheduling, and screening. It is ideal for companies with 50+ employees dealing with repetitive internal requests, businesses with multiple open roles that need to screen many candidates quickly, and teams that want voice-based pre-screening without hiring more recruiters. It integrates with LinkedIn, Indeed, Greenhouse, Lever, and most popular ATS platforms. It can handle multiple open roles simultaneously.",
+    "metadata": { "type": "use_case", "category": "hr", "agent_id": "ai_hr" }
+  },
+  {
+    "id": "agent_cos_overview",
+    "title": "AI Chief of Staff — Overview",
+    "content": "ThinklyLabs' AI Chief of Staff manages the operational overhead so leadership can focus on strategy. It handles intelligent triage of email and Slack, daily executive briefings, automated follow-through on action items, and stakeholder communication drafts. It is different from traditional productivity tools because it understands context and urgency across all communication channels, actively manages follow-through, and takes action on routine items rather than just summarizing them.",
+    "metadata": { "type": "agent", "category": "operations", "agent_id": "ai_cos" }
+  },
+  {
+    "id": "agent_cos_how_it_works",
+    "title": "AI Chief of Staff — How It Works",
+    "content": "The AI Chief of Staff works in four stages: (1) Intelligent triage — monitors email, Slack, Teams, and meeting notes, categorizes by urgency, surfaces only what needs your attention. For example, reduces 47 messages down to 4 requiring direct input. (2) Daily executive briefings — each morning delivers a personalized brief with priority tasks, calendar highlights, key team updates, pending decisions, and action items from recent meetings. (3) Automated follow-through — tracks action items from meetings and conversations, sends follow-ups on your behalf, escalates when deadlines approach. (4) Stakeholder updates — drafts status updates, sends routine messages, maintains communication cadence.",
+    "metadata": { "type": "agent_detail", "category": "operations", "agent_id": "ai_cos" }
+  },
+  {
+    "id": "agent_cos_best_for",
+    "title": "AI Chief of Staff — Best For",
+    "content": "The AI Chief of Staff is best for founders and executives drowning in operational overhead — too many messages, action items, and stakeholder updates. It is ideal for leaders who spend most of their week on scheduling, follow-ups, and coordination rather than strategy. It integrates with Slack, Google Workspace, Microsoft 365, Notion, Linear, Jira, and most CRM and project management tools. It can handle multiple executives or teams. Deployment is typically within a few weeks.",
+    "metadata": { "type": "use_case", "category": "operations", "agent_id": "ai_cos" }
+  },
+  {
+    "id": "agent_reporting_overview",
+    "title": "AI Reporting Agent — Overview",
+    "content": "ThinklyLabs' AI Reporting Agent aggregates data across tools, identifies patterns, and generates insights that drive better decisions automatically. Unlike traditional BI tools that show you dashboards you still have to interpret, this agent analyzes data and tells you what matters, not just what changed. It generates narrative insights that explain the story behind the numbers and handles ad-hoc questions conversationally without analyst support or SQL.",
+    "metadata": { "type": "agent", "category": "analytics", "agent_id": "ai_reporting" }
+  },
+  {
+    "id": "agent_reporting_how_it_works",
+    "title": "AI Reporting Agent — How It Works",
+    "content": "The AI Reporting Agent works in four stages: (1) Unified data pipeline — connects to all data sources including CRM, analytics, databases, and spreadsheets. Handles ingestion, cleaning, and modeling. Single source of truth with no manual ETL. (2) Intelligent analysis — analyzes trends, identifies anomalies, highlights insights worth attention. Learns what KPIs matter to your business. (3) Automated reporting — schedules reports for weekly updates, monthly reviews, or quarterly analyses. Reports include charts, narratives, and insights delivered to the right people. (4) Conversational access — stakeholders can query data through chat without SQL or analyst support.",
+    "metadata": { "type": "agent_detail", "category": "analytics", "agent_id": "ai_reporting" }
+  },
+  {
+    "id": "agent_reporting_best_for",
+    "title": "AI Reporting Agent — Best For",
+    "content": "The AI Reporting Agent is best for ops and analytics teams spending hours every week manually compiling reports from spreadsheets and tools. It is ideal for leadership teams that need weekly or monthly insight reports without manual effort, businesses with data spread across multiple tools like Salesforce, HubSpot, Google Analytics, Stripe, PostgreSQL, and BigQuery, and teams that want stakeholders to ask data questions without going through an analyst. Trusted by teams at WiredCo, Fundvice, and ScrollStop.",
+    "metadata": { "type": "use_case", "category": "analytics", "agent_id": "ai_reporting" }
+  },
+  {
+    "id": "agent_competitor_overview",
+    "title": "AI Competitor Analyst — Overview",
+    "content": "ThinklyLabs' AI Competitor Analyst monitors pricing, product launches, hiring patterns, and market moves — delivering insights before they become yesterday's news. Unlike manual research or news aggregators with no analysis, this agent analyzes strategic implications and connects changes to your business. It conducts deep research, synthesizes intelligence across sources, generates formatted reports, and answers strategic questions about competitor activity.",
+    "metadata": { "type": "agent", "category": "strategy", "agent_id": "ai_competitor" }
+  },
+  {
+    "id": "agent_competitor_how_it_works",
+    "title": "AI Competitor Analyst — How It Works",
+    "content": "The AI Competitor Analyst works in four stages: (1) Continuous monitoring — tracks competitor websites, news sources, and conducts deep research on strategic moves, product launches, and market positioning in real time. (2) Intelligence synthesis — as new information is discovered, analyzes strategic implications: what changed, why it matters, and how it affects your positioning. (3) Automated reporting — compiles findings into formatted reports including daily digests, weekly summaries, and strategic analyses for leadership. (4) Conversational access — ask questions anytime via chat to get instant answers about competitor activity backed by sources.",
+    "metadata": { "type": "agent_detail", "category": "strategy", "agent_id": "ai_competitor" }
+  },
+  {
+    "id": "agent_competitor_best_for",
+    "title": "AI Competitor Analyst — Best For",
+    "content": "The AI Competitor Analyst is best for product and strategy teams that need real-time market intelligence without dedicating hours to manual research. It can track 5-15 direct competitors with no hard limit. It monitors competitor websites, social activity, job postings, news, pricing pages, and product launches. It can generate battle cards for sales teams within 24 hours of a competitor launch. It integrates with existing tools and delivers reports to Slack or email.",
+    "metadata": { "type": "use_case", "category": "strategy", "agent_id": "ai_competitor" }
+  },
+  {
+    "id": "agent_content_overview",
+    "title": "AI Multiplatform Content Agent — Overview",
+    "content": "ThinklyLabs' AI Multiplatform Content Agent creates, adapts, and distributes content across LinkedIn, X (Twitter), Instagram, Reddit, and more — in your voice, not a robot's. It monitors your information sources, generates content ideas, creates platform-specific posts, and learns from performance. It is trained on your existing content and brand guidelines so your expertise comes through on every platform. It is different from generic content tools because it adapts messaging to each platform's culture and gets better over time through a feedback loop.",
+    "metadata": { "type": "agent", "category": "marketing", "agent_id": "ai_content" }
+  },
+  {
+    "id": "agent_content_how_it_works",
+    "title": "AI Multiplatform Content Agent — How It Works",
+    "content": "The AI Content Agent works in four stages: (1) Idea discovery — monitors RSS feeds, newsletters, LinkedIn, and meeting notes, surfacing content-worthy ideas so you never run dry. (2) Platform-native creation — one idea becomes native content everywhere: LinkedIn thought leadership, X threads, Instagram scripts, Reddit discussions — each tailored to how that platform works. (3) Voice preservation — trained on your existing content and brand guidelines, writes in your voice, not generic AI speak. (4) Performance learning — tracks what performs best and refines future content. Over time learns which topics, formats, and angles drive the most engagement.",
+    "metadata": { "type": "agent_detail", "category": "marketing", "agent_id": "ai_content" }
+  },
+  {
+    "id": "agent_content_best_for",
+    "title": "AI Multiplatform Content Agent — Best For",
+    "content": "The AI Multiplatform Content Agent is best for marketing teams or founders who need consistent content output without a dedicated content team. It is ideal for personal brands that want to post consistently across LinkedIn and X, businesses that need platform-specific content (not just repurposed posts), and teams wanting to scale content without scaling the content team. Supports LinkedIn, X/Twitter, Instagram, Reddit, email newsletters, and blog content. Trusted by teams at Fundvice and ScrollStop.",
+    "metadata": { "type": "use_case", "category": "marketing", "agent_id": "ai_content" }
+  }
+]

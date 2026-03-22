@@ -1,0 +1,50 @@
+[
+  {
+    "id": "uc_cold_emails",
+    "title": "Sales team spending too much time on cold outreach",
+    "content": "Problem: Sales team spends 3-5 hours daily writing cold emails, following up on leads, and manually updating the CRM. Reply rates are low despite the time investment. Solution: AI SDR agent. It researches each account, detects buying signals like funding events and job changes, writes personalized outreach referencing real account intelligence, handles replies and objections, and books qualified meetings directly into the calendar. Result: Clients like 3minds digital report 10-15% reply rates, better than manual outreach, with the team freed up to focus on closing rather than prospecting.",
+    "metadata": { "type": "use_case", "category": "sales", "recommended_agent": "AI SDR" }
+  },
+  {
+    "id": "uc_support_tickets",
+    "title": "Support team overwhelmed by repetitive customer queries",
+    "content": "Problem: Support team receives the same questions daily — billing questions, how-to queries, troubleshooting steps. Response times are high and team morale is low from answering repetitive tickets. Solution: AI Support Agent. It routes incoming queries, resolves tier-1 tickets automatically using the knowledge base, handles multi-turn conversations, and escalates only complex cases to humans with full context already packaged. Works across email and live chat. Result: Dramatically reduced response time on common queries, human team focused only on complex issues requiring real judgment.",
+    "metadata": { "type": "use_case", "category": "support", "recommended_agent": "AI Support Agent" }
+  },
+  {
+    "id": "uc_hiring_bottleneck",
+    "title": "HR team struggling to screen candidates at scale",
+    "content": "Problem: HR team has multiple open roles and is spending all their time sourcing on LinkedIn, scheduling interviews, and running the same pre-screening questions on every call. Solution: AI HR Agent. It sources candidates from LinkedIn and resume databases, scores them against requirements, conducts voice-enabled pre-screening interviews with consistent questions, schedules rounds across the team, and manages onboarding paperwork once the hire is made. Human team makes final decisions — agent handles all the operational work. Result: HR team can handle 3-4x more open roles simultaneously without adding headcount.",
+    "metadata": { "type": "use_case", "category": "hr", "recommended_agent": "AI HR Agent" }
+  },
+  {
+    "id": "uc_founder_overwhelmed",
+    "title": "Founder or executive drowning in operational work",
+    "content": "Problem: Founder spends most of the week on emails, Slack messages, scheduling, follow-ups, and stakeholder updates instead of strategy and product decisions. Solution: AI Chief of Staff. It monitors email and Slack, triages to surface only urgent items, provides a morning briefing with decisions needed today, tracks action items from meetings, sends follow-ups on the founder's behalf, and drafts stakeholder updates for review. Integrates with Google Workspace, Slack, and Notion. Result: Leadership reclaims strategic time while nothing falls through the cracks operationally.",
+    "metadata": { "type": "use_case", "category": "operations", "recommended_agent": "AI Chief of Staff" }
+  },
+  {
+    "id": "uc_manual_reporting",
+    "title": "Team compiling reports manually every week",
+    "content": "Problem: Ops or analytics team spends hours every Monday pulling data from Salesforce, Google Analytics, Stripe, and spreadsheets to compile a weekly report. The report is often stale by the time it reaches leadership. Solution: AI Reporting Agent. It connects to all data sources, runs the pipeline automatically, generates a formatted report with charts, narratives, and insights every Monday morning, and allows stakeholders to ask follow-up questions in a chat interface without SQL. Result: Zero manual reporting effort, leadership gets timely and insightful reports, and anyone on the team can query data without an analyst.",
+    "metadata": { "type": "use_case", "category": "analytics", "recommended_agent": "AI Reporting Agent" }
+  },
+  {
+    "id": "uc_competitor_tracking",
+    "title": "Product team missing competitor moves",
+    "content": "Problem: Product and strategy team hears about competitor pricing changes, product launches, or key hires days or weeks after they happen — because nobody has time to manually track 8 competitors consistently. Solution: AI Competitor Analyst. It monitors competitor websites, news, job postings, and social activity continuously. When a competitor removes their free tier or launches a new feature, the team gets an alert the same day with strategic implications and recommended actions. Delivers daily digests, weekly summaries, and battle cards on demand. Result: Product team always has current competitive context and sales team has up-to-date battle cards.",
+    "metadata": { "type": "use_case", "category": "strategy", "recommended_agent": "AI Competitor Analyst" }
+  },
+  {
+    "id": "uc_content_consistency",
+    "title": "Founder or marketer struggling with consistent content output",
+    "content": "Problem: Founder or marketing team wants to post consistently on LinkedIn and X but doesn't have time to write platform-native content regularly. Existing AI tools produce generic content that doesn't sound like them. Solution: AI Multiplatform Content Agent. It monitors RSS feeds, newsletters, and meeting notes for ideas, creates platform-specific posts in the founder's voice trained on their existing content, adapts format for LinkedIn, X, Instagram, and Reddit, and learns from what performs best. Result: Consistent content output across all platforms in the right voice without a dedicated content team. Clients report 34%+ engagement growth month over month.",
+    "metadata": { "type": "use_case", "category": "marketing", "recommended_agent": "AI Multiplatform Content Agent" }
+  },
+  {
+    "id": "uc_scattered_knowledge",
+    "title": "Team can't find information in scattered internal docs",
+    "content": "Problem: Company has product wikis, SOPs, and documentation spread across Notion, Google Drive, and Confluence. Employees waste time searching for answers or asking the same questions repeatedly. Solution: Knowledge Systems by ThinklyLabs. Transforms scattered documents into a searchable knowledge base with an intelligent search layer. Can be combined with a conversational agent so employees can ask questions in natural language and get accurate answers with citations. Result: Employees get instant answers to internal questions, reducing time spent searching and interrupting colleagues.",
+    "metadata": { "type": "use_case", "category": "knowledge", "recommended_agent": "Knowledge Systems + Custom Agent" }
+  }
+]
