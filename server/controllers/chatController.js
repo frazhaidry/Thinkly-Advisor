@@ -3,7 +3,7 @@ import {
   callGroq,
   isGreeting,
   getGreetingResponse,
-} from "../services/groqService.js";
+} from "../services/llmService.js";
 
 // ── POST /api/chat ────────────────────────────────────────────────────────────
 export const chat = async (req, res) => {
