@@ -1,18 +1,32 @@
 import { retrieveRelevantChunks } from "../services/retrievalService.js";
-import { callGroq } from "../services/llmService.js";
+import {
+  callGroq,
+  isGreeting,
+  getGreetingResponse,
+} from "../services/groqService.js";
 
 // ── POST /api/chat ────────────────────────────────────────────────────────────
 export const chat = async (req, res) => {
   const { message, conversationHistory = [] } = req.body;
 
   try {
-    // 1. Retrieve relevant chunks from vector store
+    // 1. Short-circuit greetings — no RAG, no LLM call
+    if (isGreeting(message)) {
+      return res.status(200).json({
+        success: true,
+        reply: getGreetingResponse(message),
+        sources: [],
+        retrievedCount: 0,
+      });
+    }
+
+    // 2. Retrieve relevant chunks from vector store
     const relevantChunks = await retrieveRelevantChunks(message, 5);
 
-    // 2. Call Groq with chunks + history
+    // 3. Call Groq with chunks + history
     const reply = await callGroq(message, relevantChunks, conversationHistory);
 
-    // 3. Deduplicate sources for the response
+    // 4. Deduplicate sources
     const sources = [...new Set(relevantChunks.map((c) => c.source))];
 
     return res.status(200).json({
@@ -21,26 +35,25 @@ export const chat = async (req, res) => {
       sources,
       retrievedCount: relevantChunks.length,
     });
+
   } catch (err) {
-    console.error("❌ chat controller error:", err);
+    console.error("❌ [chatController] error:", err?.message || err);
     return res.status(500).json({
       success: false,
-      message: "Something went wrong while processing your message.",
+      reply: "Something went wrong — try again or contact sachi@thinklylabs.com",
     });
   }
 };
 
-// ── GET /api/suggested-questions ──────────────────────────────────────────────
+// ── GET /api/suggested-questions ─────────────────────────────────────────────
 export const getSuggestedQuestions = (req, res) => {
   const suggestions = [
-    "What does ThinklyLabs do?",
-    "What AI agents do you offer?",
-    "How long does a project take to deploy?",
-    "What industries do you work with?",
-    "How does pricing work?",
-    "Who are the founders of ThinklyLabs?",
-    "What is the AI SDR agent?",
-    "How do I get started with ThinklyLabs?",
+    "My sales team spends hours on cold emails every day",
+    "Our support team is drowning in repetitive tickets",
+    "I'm a founder stuck in emails and scheduling all week",
+    "We compile reports manually every Monday — it's painful",
+    "We have no visibility into what our competitors are doing",
+    "Our hiring process takes forever and the team is stretched",
   ];
 
   return res.status(200).json({ success: true, suggestions });
