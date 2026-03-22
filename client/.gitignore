@@ -28,3 +28,6 @@ dist-ssr
 /dist
 /dist-ssr
 *.local
+
+
+.env

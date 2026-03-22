@@ -3,6 +3,9 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
+// Tell Xenova to cache the model in /tmp (writable on Render)
+process.env.XENOVA_CACHE_DIR = "/tmp/.xenova";
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
