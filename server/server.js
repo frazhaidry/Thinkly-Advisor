@@ -3,27 +3,35 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { buildVectorStore } from "./services/embeddingService.js";
 import chatRoutes from "./routes/chat.js";
+import { apiLimiter } from "./middleware/rateLimiter.js";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ── Middleware ─────────────────────────────────────────────────────────────────
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://thinkly-advisor.vercel.app",
+];
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:5173",
+  origin: function (origin, callback) {
+    // allow requests like Postman or server-to-server with no origin
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error("Not allowed by CORS"));
+  },
   methods: ["GET", "POST"],
 }));
 
 app.use(express.json({ limit: "1mb" }));
-
-// add this import at the top
-import { apiLimiter } from "./middleware/rateLimiter.js";
-
-// add this line after app.use(express.json(...))
 app.use("/api", apiLimiter);
 
-// ── Routes ────────────────────────────────────────────────────────────────────
 app.get("/", (req, res) => {
   res.json({ message: "ThinklyLabs RAG API is running." });
 });
@@ -37,7 +45,6 @@ app.get("/api/health", (req, res) => {
 
 app.use("/api", chatRoutes);
 
-// ── 404 handler ───────────────────────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -45,18 +52,12 @@ app.use((req, res) => {
   });
 });
 
-// ── Boot sequence ─────────────────────────────────────────────────────────────
-// Build vector store first, then start listening.
-// No requests are accepted until embeddings are ready.
 async function start() {
   try {
     console.log("🚀 Starting ThinklyLabs RAG backend...");
     await buildVectorStore();
     app.listen(PORT, () => {
-      console.log(`\n✅ Server ready on http://localhost:${PORT}`);
-      console.log(`   GET  /api/health`);
-      console.log(`   POST /api/chat`);
-      console.log(`   GET  /api/suggested-questions\n`);
+      console.log(`✅ Server ready on http://localhost:${PORT}`);
     });
   } catch (err) {
     console.error("❌ Failed to start server:", err);

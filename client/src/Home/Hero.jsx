@@ -34,400 +34,78 @@ const HeroScreen = ({ onStart }) => {
     checkBackend();
   }, []);
 
-  const styles = {
-    container: {
-      minHeight: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      overflow: "auto",
-      position: "relative",
-      background: "linear-gradient(135deg, #0A0A0A 0%, #0F0F0F 50%, #0A0A0A 100%)",
-    },
-    backgroundOrb1: {
-      position: "fixed",
-      top: "-20%",
-      right: "-10%",
-      width: "800px",
-      height: "800px",
-      borderRadius: "50%",
-      background: "linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2))",
-      filter: "blur(120px)",
-      animation: "pulseSlow 6s ease-in-out infinite",
-      pointerEvents: "none",
-    },
-    backgroundOrb2: {
-      position: "fixed",
-      bottom: "-20%",
-      left: "-10%",
-      width: "800px",
-      height: "800px",
-      borderRadius: "50%",
-      background: "linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2))",
-      filter: "blur(120px)",
-      animation: "pulseSlower 8s ease-in-out infinite",
-      pointerEvents: "none",
-    },
-    gridPattern: {
-      position: "fixed",
-      inset: 0,
-      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`,
-      opacity: 0.3,
-      pointerEvents: "none",
-    },
-    nav: {
-      position: "sticky",
-      top: 0,
-      zIndex: 20,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: "24px 32px",
-      animation: "slideDown 0.5s ease-out",
-      background: "rgba(10, 10, 10, 0.8)",
-      backdropFilter: "blur(20px)",
-      borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
-    },
-    logoContainer: {
-      display: "flex",
-      alignItems: "center",
-      gap: "12px",
-      cursor: "pointer",
-      transition: "transform 0.3s ease",
-    },
-    logoBox: {
-      width: "32px",
-      height: "32px",
-      background: "linear-gradient(135deg, white, rgba(255,255,255,0.8))",
-      borderRadius: "8px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
-      transition: "transform 0.3s ease",
-    },
-    logoInner: {
-      width: "16px",
-      height: "16px",
-      background: "linear-gradient(135deg, #0A0A0A, #1A1A1A)",
-      borderRadius: "4px",
-    },
-    logoText: {
-      fontSize: "18px",
-      fontWeight: 600,
-      background: "linear-gradient(135deg, white, rgba(255,255,255,0.7))",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-    },
-    statusBadge: {
-      display: "flex",
-      alignItems: "center",
-      gap: "8px",
-      padding: "8px 16px",
-      borderRadius: "9999px",
-      background: "rgba(255, 255, 255, 0.05)",
-      backdropFilter: "blur(10px)",
-      border: "1px solid rgba(255, 255, 255, 0.1)",
-      transition: "all 0.3s ease",
-    },
-    statusDot: {
-      width: "10px",
-      height: "10px",
-      borderRadius: "50%",
-      position: "relative",
-    },
-    statusText: {
-      fontSize: "12px",
-      color: "rgba(255, 255, 255, 0.7)",
-      fontWeight: 500,
-    },
-    main: {
-      position: "relative",
-      zIndex: 10,
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      padding: "64px 24px",
-      minHeight: "calc(100vh - 200px)",
-    },
-    badge: {
-      padding: "8px 16px",
-      borderRadius: "9999px",
-      border: "1px solid rgba(255, 255, 255, 0.1)",
-      background: "rgba(255, 255, 255, 0.05)",
-      backdropFilter: "blur(10px)",
-      marginBottom: "32px",
-      animation: "fadeInUp 0.6s ease-out",
-    },
-    badgeText: {
-      fontSize: "12px",
-      color: "rgba(255, 255, 255, 0.6)",
-      textTransform: "uppercase",
-      letterSpacing: "0.2em",
-      fontWeight: 500,
-    },
-    heading: {
-      fontSize: "clamp(48px, 8vw, 96px)",
-      fontWeight: "bold",
-      lineHeight: 1.2,
-      maxWidth: "1200px",
-      marginBottom: "24px",
-      animation: "fadeInUp 0.6s ease-out 0.2s forwards",
-      opacity: 0,
-      animationFillMode: "forwards",
-    },
-    gradientText: {
-      background: "linear-gradient(135deg, #c084fc, #60a5fa, #22d3ee)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      backgroundClip: "text",
-      position: "relative",
-      display: "inline-block",
-    },
-    description: {
-      color: "rgba(255, 255, 255, 0.5)",
-      fontSize: "clamp(18px, 2vw, 24px)",
-      maxWidth: "800px",
-      marginBottom: "40px",
-      lineHeight: 1.6,
-      animation: "fadeInUp 0.6s ease-out 0.4s forwards",
-      opacity: 0,
-      animationFillMode: "forwards",
-    },
-    thinklyButtonContainer: {
-      marginBottom: "32px",
-      animation: "fadeInUp 0.6s ease-out 0.5s forwards",
-      opacity: 0,
-      animationFillMode: "forwards",
-    },
-    thinklyButton: {
-      position: "relative",
-      padding: "18px 48px",
-      borderRadius: "60px",
-      fontSize: "18px",
-      fontWeight: 600,
-      border: "none",
-      cursor: "pointer",
-      transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-      overflow: "hidden",
-      background: "linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(59, 130, 246, 0.9))",
-      boxShadow: "0 8px 32px rgba(139, 92, 246, 0.3)",
-    },
-    thinklyGlow: {
-      position: "absolute",
-      inset: 0,
-      background: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
-      borderRadius: "60px",
-      filter: "blur(20px)",
-      opacity: 0,
-      transition: "opacity 0.4s ease",
-    },
-    thinklyContent: {
-      position: "relative",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      gap: "12px",
-      zIndex: 2,
-    },
-    thinklyIcon: {
-      width: "24px",
-      height: "24px",
-      transition: "transform 0.3s ease",
-    },
-    thinklyText: {
-      color: "white",
-      fontWeight: 600,
-      letterSpacing: "0.5px",
-    },
-    ctaButton: {
-      position: "relative",
-      padding: "14px 32px",
-      borderRadius: "12px",
-      fontSize: "14px",
-      fontWeight: 500,
-      border: "1px solid rgba(255, 255, 255, 0.2)",
-      cursor: "pointer",
-      transition: "all 0.3s ease",
-      background: "rgba(255, 255, 255, 0.03)",
-      backdropFilter: "blur(10px)",
-      animation: "fadeInUp 0.6s ease-out 0.7s forwards",
-      opacity: 0,
-      animationFillMode: "forwards",
-    },
-    ctaText: {
-      position: "relative",
-      color: "rgba(255, 255, 255, 0.8)",
-      fontWeight: 500,
-      zIndex: 1,
-    },
-    message: {
-      marginTop: "24px",
-      fontSize: "14px",
-      color: "rgba(255, 255, 255, 0.4)",
-      fontFamily: "monospace",
-      animation: "fadeIn 0.4s ease-out",
-    },
-    agentsContainer: {
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "center",
-      gap: "12px",
-      marginTop: "64px",
-      maxWidth: "1200px",
-      animation: "fadeInUp 0.6s ease-out 0.9s forwards",
-      opacity: 0,
-      animationFillMode: "forwards",
-    },
-    agentItem: {
-      position: "relative",
-    },
-    agentButton: {
-      padding: "10px 16px",
-      borderRadius: "9999px",
-      border: "1px solid rgba(255, 255, 255, 0.1)",
-      background: "rgba(255, 255, 255, 0.05)",
-      backdropFilter: "blur(10px)",
-      cursor: "pointer",
-      transition: "all 0.3s ease",
-      display: "flex",
-      alignItems: "center",
-      gap: "8px",
-    },
-    agentIcon: {
-      fontSize: "18px",
-      transition: "transform 0.3s ease",
-    },
-    agentName: {
-      fontSize: "14px",
-      color: "rgba(255, 255, 255, 0.7)",
-      fontWeight: 500,
-      transition: "color 0.3s ease",
-    },
-    tooltip: {
-      position: "absolute",
-      bottom: "100%",
-      left: "50%",
-      transform: "translateX(-50%)",
-      marginBottom: "8px",
-      padding: "6px 12px",
-      borderRadius: "8px",
-      background: "rgba(0, 0, 0, 0.9)",
-      backdropFilter: "blur(10px)",
-      border: "1px solid rgba(255, 255, 255, 0.1)",
-      whiteSpace: "nowrap",
-      zIndex: 20,
-      animation: "fadeInUp 0.2s ease-out",
-    },
-    tooltipText: {
-      fontSize: "12px",
-      color: "rgba(255, 255, 255, 0.8)",
-    },
-    tooltipArrow: {
-      position: "absolute",
-      top: "100%",
-      left: "50%",
-      width: "8px",
-      height: "8px",
-      background: "rgba(0, 0, 0, 0.9)",
-      transform: "rotate(45deg)",
-      borderRight: "1px solid rgba(255, 255, 255, 0.1)",
-      borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
-    },
-    footer: {
-      position: "relative",
-      zIndex: 10,
-      textAlign: "center",
-      padding: "24px",
-      borderTop: "1px solid rgba(255, 255, 255, 0.05)",
-      animation: "fadeIn 0.6s ease-out",
-    },
-    footerText: {
-      fontSize: "12px",
-      color: "rgba(255, 255, 255, 0.2)",
-    },
-  };
-
-  // ── Handle Talk to Thinkly click ─────────────────────────────────────────────
-  const handleTalkToThinkly = () => {
-    if (onStart) onStart();
-  };
-
   return (
-    <div style={styles.container}>
-      <style>
-        {`
-          @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to   { opacity: 1; transform: translateY(0);    }
+    <div className="min-h-screen flex flex-col overflow-auto relative bg-gradient-to-br from-[#0A0A0A] via-[#0F0F0F] to-[#0A0A0A]">
+      <style>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes slideDown {
+          from { opacity: 0; transform: translateY(-100%); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseSlow {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.6; transform: scale(1.05); }
+        }
+        @keyframes pulseSlower {
+          0%, 100% { opacity: 0.2; transform: scale(1); }
+          50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.2); opacity: 0.7; }
+        }
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @keyframes shimmer {
+          0% { transform: translateX(-100%) rotate(45deg); }
+          100% { transform: translateX(200%) rotate(45deg); }
+        }
+        @keyframes borderPulse {
+          0%, 100% { border-color: rgba(239, 68, 68, 0.3); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+          50% { border-color: rgba(239, 68, 68, 0.8); box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2); }
+        }
+        button:active { transform: scale(0.98); }
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
           }
-          @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-          }
-          @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-100%); }
-            to   { opacity: 1; transform: translateY(0);     }
-          }
-          @keyframes pulseSlow {
-            0%, 100% { opacity: 0.3; transform: scale(1);    }
-            50%       { opacity: 0.6; transform: scale(1.05); }
-          }
-          @keyframes pulseSlower {
-            0%, 100% { opacity: 0.2; transform: scale(1);   }
-            50%       { opacity: 0.5; transform: scale(1.1); }
-          }
-          @keyframes pulse {
-            0%, 100% { transform: scale(1);   opacity: 1;   }
-            50%       { transform: scale(1.2); opacity: 0.7; }
-          }
-          @keyframes gradientShift {
-            0%   { background-position: 0% 50%;   }
-            50%  { background-position: 100% 50%; }
-            100% { background-position: 0% 50%;   }
-          }
-          @keyframes shimmer {
-            0%   { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(200%)  rotate(45deg); }
-          }
-          button:active { transform: scale(0.98); }
-          @media (prefers-reduced-motion: reduce) {
-            * {
-              animation-duration: 0.01ms !important;
-              animation-iteration-count: 1 !important;
-              transition-duration: 0.01ms !important;
-            }
-          }
-        `}
-      </style>
+        }
+      `}</style>
 
-      {/* Background */}
-      <div style={styles.backgroundOrb1} />
-      <div style={styles.backgroundOrb2} />
-      <div style={styles.gridPattern} />
+      {/* Background Orbs */}
+      <div className="fixed top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 blur-[120px] animate-[pulseSlow_6s_ease-in-out_infinite] pointer-events-none" />
+      <div className="fixed bottom-[-20%] left-[-10%] w-[800px] h-[800px] rounded-full bg-gradient-to-br from-purple-600/20 to-pink-500/20 blur-[120px] animate-[pulseSlower_8s_ease-in-out_infinite] pointer-events-none" />
+      
+      {/* Grid Pattern */}
+      <div className="fixed inset-0 opacity-30 pointer-events-none" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='60' height='60' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 60 0 L 0 0 0 60' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`,
+      }} />
 
-      {/* Nav */}
-      <nav style={styles.nav}>
-        <div
-          style={styles.logoContainer}
-          onMouseEnter={(e) => {
-            e.currentTarget.querySelector(".logo-box").style.transform = "rotate(180deg)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.querySelector(".logo-box").style.transform = "rotate(0deg)";
-          }}
-        >
-          <div className="logo-box" style={styles.logoBox}>
-            <div style={styles.logoInner} />
+      {/* Navigation */}
+      <nav className="sticky top-0 z-20 flex items-center justify-between px-6 sm:px-8 py-6 animate-[slideDown_0.5s_ease-out] bg-black/80 backdrop-blur-xl border-b border-white/5">
+        <div className="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-105 group">
+          <div className="w-8 h-8 bg-gradient-to-br from-white to-white/80 rounded-lg flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:rotate-180">
+            <div className="w-4 h-4 bg-gradient-to-br from-[#0A0A0A] to-[#1A1A1A] rounded" />
           </div>
-          <span style={styles.logoText}>ThinklyAdvisor</span>
+          <span className="text-lg font-semibold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+            ThinklyAdvisor
+          </span>
         </div>
 
-        <div
-          style={styles.statusBadge}
+        <div 
+          className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-white/5 backdrop-blur-lg border border-white/10 transition-all duration-300 hover:scale-105 hover:bg-white/10"
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = "scale(1.05)";
             e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
@@ -437,137 +115,119 @@ const HeroScreen = ({ onStart }) => {
             e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
           }}
         >
-          <div style={{ position: "relative" }}>
-            <div
-              style={{
-                ...styles.statusDot,
-                backgroundColor:
-                  apiStatus === "checking"
-                    ? "#facc15"
-                    : apiStatus === "online"
-                    ? "#10b981"
-                    : "#ef4444",
-                animation: apiStatus === "checking" ? "pulse 1.5s infinite" : "none",
-              }}
+          <div className="relative">
+            <div 
+              className={`w-2.5 h-2.5 rounded-full ${
+                apiStatus === "checking" ? "bg-yellow-500 animate-[pulse_1.5s_infinite]" :
+                apiStatus === "online" ? "bg-emerald-500" : "bg-red-500"
+              }`}
             />
             {apiStatus === "online" && (
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  borderRadius: "50%",
-                  backgroundColor: "#10b981",
-                  animation: "pulse 2s infinite",
-                  opacity: 0.75,
-                }}
-              />
+              <div className="absolute inset-0 rounded-full bg-emerald-500 animate-[pulse_2s_infinite] opacity-75" />
             )}
           </div>
-          <span style={styles.statusText}>
-            {apiStatus === "checking"
-              ? "Connecting..."
-              : apiStatus === "online"
-              ? "API Online"
-              : "API Offline"}
+          <span className="text-xs font-medium text-white/70">
+            {apiStatus === "checking" ? "Connecting... it can take 2 minutes" : apiStatus === "online" ? "API Online" : "API Offline"}
           </span>
         </div>
       </nav>
 
-      {/* Main */}
-      <main style={styles.main}>
-        <div style={styles.badge}>
-          <span style={styles.badgeText}>Powered by RAG · Built for ThinklyLabs</span>
+      {/* Main Content */}
+      <main className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-16 sm:px-8 lg:px-16 min-h-[calc(100vh-200px)]">
+        {/* Badge */}
+        <div className="px-3 sm:px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-lg mb-6 sm:mb-8 animate-[fadeInUp_0.6s_ease-out]">
+          <span className="text-[10px] sm:text-xs text-white/60 uppercase tracking-[0.2em] font-medium">
+            Powered by RAG · Built for ThinklyLabs
+          </span>
         </div>
 
-        <h1 style={styles.heading}>
+        {/* Heading */}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.2] max-w-[1200px] mb-4 sm:mb-6 animate-[fadeInUp_0.6s_ease-out_0.2s_forwards] opacity-0">
           Find your{" "}
-          <span style={{ position: "relative", display: "inline-block" }}>
-            <span
-              style={{
-                ...styles.gradientText,
-                backgroundSize: "300%",
-                animation: "gradientShift 3s ease infinite",
-              }}
-            >
+          <span className="relative inline-block">
+            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent bg-[length:300%] animate-[gradientShift_3s_ease_infinite]">
               AI agent
             </span>
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(135deg, #c084fc, #60a5fa, #22d3ee)",
-                filter: "blur(24px)",
-                opacity: 0.5,
-                animation: "pulseSlow 3s ease-in-out infinite",
-              }}
-            />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 blur-2xl opacity-50 animate-[pulseSlow_3s_ease-in-out_infinite]" />
           </span>{" "}
           in minutes.
         </h1>
 
-        <p style={styles.description}>
+        {/* Description */}
+        <p className="text-lg sm:text-xl md:text-2xl text-white/50 max-w-[800px] mb-8 sm:mb-10 leading-relaxed animate-[fadeInUp_0.6s_ease-out_0.4s_forwards] opacity-0">
           Describe your operational bottleneck and get a grounded recommendation
           from ThinklyLabs' agent portfolio.
         </p>
 
+        {/* Disclaimer Box - Xenova Embedding Notice */}
+        <div className="w-full max-w-3xl mx-auto mb-6 sm:mb-8 animate-[fadeInUp_0.6s_ease-out_0.45s_forwards] opacity-0">
+          <div className="relative group">
+            {/* Animated border effect */}
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 via-orange-500 to-red-600 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300 animate-[borderPulse_2s_ease-in-out_infinite]" />
+            
+            <div className="relative bg-gradient-to-r from-red-950/90 via-red-900/90 to-orange-950/90 backdrop-blur-lg rounded-xl border border-red-500/50 p-4 sm:p-5 shadow-lg shadow-red-500/20">
+              <div className="flex items-start gap-3 sm:gap-4">
+                {/* Icon */}
+                <div className="flex-shrink-0">
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 text-red-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                
+                {/* Content */}
+                <div className="flex-1 text-left">
+                  <h3 className="text-sm sm:text-base font-semibold text-red-300 mb-1">
+                    ⚡ Initial Setup Notice
+                  </h3>
+                  <p className="text-xs sm:text-sm text-red-200/80 leading-relaxed">
+                    The first request may take up to 2 minutes as the Xenova Node.js library initializes 
+                    and downloads embedding models. This is a one-time setup per session. Subsequent 
+                    responses will be instant. Thank you for your patience! 🚀
+                  </p>
+                </div>
+                
+                {/* Optional: Dismiss button (uncomment if needed) */}
+                {/* <button className="flex-shrink-0 text-red-400 hover:text-red-300 transition-colors">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button> */}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Talk to Thinkly Button */}
-        <div style={styles.thinklyButtonContainer}>
+        <div className="mb-6 sm:mb-8 animate-[fadeInUp_0.6s_ease-out_0.5s_forwards] opacity-0">
           <button
-            style={styles.thinklyButton}
+            className="relative px-8 sm:px-12 py-4 sm:py-5 rounded-full text-base sm:text-lg font-semibold cursor-pointer overflow-hidden bg-gradient-to-r from-purple-600/90 to-blue-600/90 shadow-lg shadow-purple-500/30 transition-all duration-300 hover:scale-105 active:scale-95"
             onMouseEnter={() => setIsThinklyHovered(true)}
             onMouseLeave={() => setIsThinklyHovered(false)}
-            onClick={handleTalkToThinkly}
+            onClick={() => onStart && onStart()}
           >
-            <div style={{ ...styles.thinklyGlow, opacity: isThinklyHovered ? 0.8 : 0 }} />
-            <div style={styles.thinklyContent}>
-              <svg
-                style={{
-                  ...styles.thinklyIcon,
-                  transform: isThinklyHovered ? "scale(1.1)" : "scale(1)",
-                }}
-                fill="none"
-                stroke="currentColor"
+            <div className={`absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full blur-xl transition-opacity duration-400 ${isThinklyHovered ? 'opacity-80' : 'opacity-0'}`} />
+            <div className="relative flex items-center justify-center gap-2 sm:gap-3 z-10">
+              <svg 
+                className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${isThinklyHovered ? 'scale-110' : 'scale-100'}`}
+                fill="none" 
+                stroke="currentColor" 
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
               </svg>
-              <span style={styles.thinklyText}>Talk to Thinkly</span>
-              <svg
-                style={{
-                  ...styles.thinklyIcon,
-                  transform: isThinklyHovered ? "translateX(4px)" : "translateX(0)",
-                  transition: "transform 0.3s ease",
-                }}
-                fill="none"
-                stroke="currentColor"
+              <span className="text-white font-semibold tracking-wide">Talk to Thinkly</span>
+              <svg 
+                className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${isThinklyHovered ? 'translate-x-1' : 'translate-x-0'}`}
+                fill="none" 
+                stroke="currentColor" 
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </div>
             {isThinklyHovered && (
-              <div style={{ position: "absolute", inset: 0, borderRadius: "60px", overflow: "hidden" }}>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "-50%",
-                    left: "-50%",
-                    width: "200%",
-                    height: "200%",
-                    background: "linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent)",
-                    animation: "shimmer 1.5s ease-in-out",
-                  }}
-                />
+              <div className="absolute inset-0 rounded-full overflow-hidden">
+                <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-r from-transparent via-white/30 to-transparent animate-[shimmer_1.5s_ease-in-out]" />
               </div>
             )}
           </button>
@@ -575,34 +235,33 @@ const HeroScreen = ({ onStart }) => {
 
         {/* Secondary CTA */}
         <button
-          style={styles.ctaButton}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "scale(1.05)";
-            e.currentTarget.style.background = "rgba(255, 255, 255, 0.08)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-            e.currentTarget.style.background = "rgba(255, 255, 255, 0.03)";
-          }}
+          className="relative px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm font-medium border border-white/20 cursor-pointer transition-all duration-300 bg-white/5 backdrop-blur-lg hover:scale-105 hover:bg-white/10 active:scale-95 animate-[fadeInUp_0.6s_ease-out_0.7s_forwards] opacity-0"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           onClick={checkBackend}
         >
-          <span style={styles.ctaText}>
+          <span className="relative text-white/80 font-medium z-10">
             {isHovered ? "🔄 Checking..." : "Check Backend Status"}
           </span>
         </button>
 
-        {message && <p style={styles.message}>{message}</p>}
+        {message && (
+          <p className="mt-5 sm:mt-6 text-xs sm:text-sm text-white/40 font-mono animate-[fadeIn_0.4s_ease-out]">
+            {message}
+          </p>
+        )}
 
-        <div style={styles.agentsContainer}>
+        {/* Agents Grid */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-12 sm:mt-16 max-w-[1200px] animate-[fadeInUp_0.6s_ease-out_0.9s_forwards] opacity-0">
           {agents.map((agent, index) => (
             <div
               key={agent.name}
-              style={styles.agentItem}
+              className="relative"
               onMouseEnter={() => setHoveredAgent(index)}
               onMouseLeave={() => setHoveredAgent(null)}
             >
-              <div
-                style={styles.agentButton}
+              <button
+                className="px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-lg cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-white/10 flex items-center gap-1.5 sm:gap-2"
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "scale(1.05)";
                   e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)";
@@ -612,26 +271,26 @@ const HeroScreen = ({ onStart }) => {
                   e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)";
                 }}
               >
-                <span
-                  style={styles.agentIcon}
+                <span 
+                  className="text-base sm:text-lg transition-transform duration-300 hover:scale-110 inline-block"
                   onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.1)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
                 >
                   {agent.icon}
                 </span>
-                <span
-                  style={styles.agentName}
+                <span 
+                  className="text-xs sm:text-sm text-white/70 font-medium transition-colors duration-300 hover:text-white/90"
                   onMouseEnter={(e) => { e.currentTarget.style.color = "rgba(255, 255, 255, 0.9)"; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = "rgba(255, 255, 255, 0.7)"; }}
                 >
                   {agent.name}
                 </span>
-              </div>
+              </button>
 
               {hoveredAgent === index && (
-                <div style={styles.tooltip}>
-                  <p style={styles.tooltipText}>{agent.description}</p>
-                  <div style={styles.tooltipArrow} />
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 rounded-lg bg-black/90 backdrop-blur-lg border border-white/10 whitespace-nowrap z-20 animate-[fadeInUp_0.2s_ease-out]">
+                  <p className="text-xs text-white/80">{agent.description}</p>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-black/90 rotate-45 border-r border-b border-white/10" />
                 </div>
               )}
             </div>
@@ -640,8 +299,8 @@ const HeroScreen = ({ onStart }) => {
       </main>
 
       {/* Footer */}
-      <footer style={styles.footer}>
-        <p style={styles.footerText}>© 2025 ThinklyLabs LLP</p>
+      <footer className="relative z-10 text-center py-5 sm:py-6 border-t border-white/5 animate-[fadeIn_0.6s_ease-out]">
+        <p className="text-[10px] sm:text-xs text-white/20">© 2025 ThinklyLabs LLP</p>
       </footer>
     </div>
   );
