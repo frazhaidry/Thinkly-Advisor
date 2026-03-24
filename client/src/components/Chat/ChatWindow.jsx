@@ -1,7 +1,7 @@
 import { useChat } from "../../hooks/useChat";
 import ChatMessage from "./ChatMessage";
-import ChatInput from "./chatInput";
-import SuggestedQuestions from "./suggestedQuestions";
+import ChatInput from "./ChatInput.jsx";
+import SuggestedQuestions from "./SuggestedQuestions.jsx";
 
 const ChatWindow = ({ onClose }) => {
   const {
