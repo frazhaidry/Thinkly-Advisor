@@ -1,6 +1,6 @@
 import { useState } from "react";
 import HeroScreen from "./Home/Hero";
-import ChatWindow from "./components/Chat/chatWindow";
+import ChatWindow from "./components/Chat/ChatWindow.jsx";
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
